@@ -1,0 +1,41 @@
+<!--
+  @File Name          : lwcInVisualforceDemo.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 2020-02-13 11 h 25 min 17 s
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    2020-02-13   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card title="Calling Lightning Web Components From Visualforce Page" icon-name="standard:account">
+        <template if:true={accData}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div title="Key">Account Name</div>
+                        </th>
+                        <th scope="col">
+                            <div title="Value">Industry</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={accData} for:item="acc">
+                        <tr key={acc.key}>
+                            <th scope="col">
+                                <div>{acc.Name}</div>
+                            </th>
+                            <th scope="col">
+                                <div>{acc.Industry}</div>
+                            </th>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+    </lightning-card>
+</template>
